@@ -1,32 +1,32 @@
 # 🐧 LumenFix
 
-**An intelligent, community-driven Linux utility and GTK control center offering automated driver installation, proactive system patching, and universal GPU management (Nvidia & AMD).**
+**A community-driven Linux utility and GTK control center for automated driver installation, system patching, and GPU management (Nvidia & AMD).**
 
 ## 🚀 Overview
 
-LumenFix is designed to be the ultimate safety net and intelligence hub for Linux users. Built natively in C++ and GTK to strictly follow Linux design paradigms, it operates with a powerful **dual-purpose architecture**: 
-1. **Intelligence Feed:** A real-time bug tracker that notifies users of newly discovered system issues.
-2. **Proactive Patching Engine:** A centralized hub that delivers temporary, community-verified scripts to preempt or fix those bugs until official upstream updates are released.
+LumenFix is a system maintenance utility for Linux environments. Built natively in C++ and GTK, it provides two primary functions: 
+1. **Bug Tracker:** A feed that notifies users of recently discovered system issues and vulnerabilities.
+2. **Patching Engine:** A centralized hub that delivers temporary, community-verified scripts to address bugs until official upstream updates are released.
 
-Beyond OS-level stability, LumenFix serves as a unified hardware dashboard. By bridging the gap between fragmented open-source drivers and proprietary tools, it offers seamless telemetry, tuning, automated driver installation, and patch management for both **Nvidia and AMD GPUs** from a single, polished interface.
+Additionally, LumenFix serves as a unified hardware dashboard. It provides telemetry, tuning, automated driver installation, and patch management for both **Nvidia and AMD GPUs** from a single interface, reducing the need to rely on fragmented manufacturer-specific tools.
 
-To ensure flawless compatibility, LumenFix features **automated distro-detection**. Upon launch, it instantly fingerprints your specific Linux distribution (e.g., Ubuntu, Arch, Fedora) and automatically routes your machine to the dedicated community server tailored for that exact OS ecosystem.
+To ensure compatibility, LumenFix includes **automated distro-detection**. Upon launch, it identifies the host Linux distribution (e.g., Ubuntu, Arch, Fedora) and routes the machine to the community server designated for that specific OS.
 
 ## ✨ Key Features
 
-* **Zero-Touch Driver Installation:** For distributions that don't ship with proprietary or up-to-date drivers out of the box, LumenFix automates the entire setup. It detects your hardware and seamlessly installs the correct Nvidia or AMD drivers, saving you from complex manual terminal configurations.
-* **Universal GPU Telemetry & Control:** Whether you are on Team Green (Nvidia) or Team Red (AMD), monitor your hardware's thermals, power draw, and clock speeds. Apply community-tested driver patches without relying on clunky, manufacturer-specific software.
-* **Smart OS Detection & Routing:** Zero configuration required. LumenFix automatically detects your current Linux distribution and instantly links your system to the dedicated server node for your OS architecture.
-* **Proactive Community Patching:** When bugs are discovered in your distro's ecosystem, the community rolls out temporary scripts. LumenFix applies these fixes to preempt future crashes before they impact your workflow.
-* **Real-Time Bug Feed & Alerts:** Stay ahead of system issues with a built-in news feed. LumenFix sends push notifications the moment a valid bug or vulnerability is verified by the community for your specific setup.
-* **AI-Powered System Monitor:** An intelligent background service that continuously analyzes your hardware and system state. It cross-references your configuration with the distro-specific database to suggest only the most relevant fixes.
+* **Automated Driver Installation:** For distributions that do not include proprietary drivers by default, LumenFix detects the system's hardware and automates the installation of the appropriate Nvidia or AMD drivers, minimizing manual configuration.
+* **GPU Telemetry & Control:** Monitor hardware thermals, power draw, and clock speeds for both Nvidia and AMD graphics cards. Apply community-tested driver patches directly through the interface.
+* **OS Detection & Routing:** Automatically detects the current Linux distribution and connects the system to the relevant OS-specific server node without requiring user configuration.
+* **Community Patching:** Access and apply temporary scripts rolled out by the community to mitigate system instabilities and known bugs.
+* **Bug Feed & Alerts:** Receive push notifications when a bug or vulnerability relevant to the user's specific hardware and OS setup is verified by the community.
+* **Automated System Analysis:** A background service that monitors hardware and system states, cross-referencing the current configuration with the distro-specific database to suggest relevant available fixes.
 
 ## 🏗️ Architecture & Tech Stack
 
-To securely manage system-level changes, LumenFix utilizes a modern Linux Client-Daemon architecture:
+To manage system-level changes securely, LumenFix utilizes a Client-Daemon architecture:
 * **Core Language:** C++ (Standard 20+)
-* **GUI Frontend (Client):** GTK4 & libadwaita (Native Linux paradigm, Wayland-ready)
-* **Backend Service (Daemon):** A systemd-managed background service running with elevated privileges to execute patches and hardware tuning securely.
+* **GUI Frontend (Client):** GTK4 & libadwaita (Wayland-ready)
+* **Backend Service (Daemon):** A systemd-managed background service running with elevated privileges to safely execute patches and hardware tuning.
 * **Inter-Process Communication (IPC):** D-Bus for secure communication between the GTK UI and the background daemon.
 * **Build System:** CMake
 
